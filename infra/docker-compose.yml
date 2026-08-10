@@ -1,0 +1,60 @@
+# Local dev stack: Postgres + FastAPI + Next.js.
+# Run everything with:  docker compose up --build
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: shramiksathi
+      POSTGRES_PASSWORD: shramiksathi
+      POSTGRES_DB: shramiksathi
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shramiksathi"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ../apps/api
+    environment:
+      # In-repo hostname `db` resolves via the compose network.
+      DATABASE_URL: postgresql+asyncpg://shramiksathi:shramiksathi@db:5432/shramiksathi
+      # Allow both localhost and the LAN IP so friends on the same WiFi can use it.
+      CORS_ORIGINS: http://localhost:3001,http://${LAN_IP:-localhost}:3001
+      # "Analyse with AI" — set GEMINI_API_KEY in your shell to enable it.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      # Encrypts digital-signature private keys at rest. MUST stay stable across
+      # restarts or existing signing keys become undecryptable.
+      SIGNING_SECRET: ${SIGNING_SECRET:-dev-signing-secret-change-me}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../apps/api:/app
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  web:
+    build:
+      context: ../apps/web
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: http://${LAN_IP:-localhost}:8000
+    ports:
+      - "3001:3000"
+    depends_on:
+      - api
+    volumes:
+      - ../apps/web:/app
+      - /app/node_modules
+    command: sh -c "npm run dev"
+
+volumes:
+  postgres_data:

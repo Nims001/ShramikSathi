@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "generated_at": "2026-08-07T20:21:13.857343+00:00",
+    "law_framework": "The Labour Act, 2017 (Nepal) and the Minimum Remuneration Fixation, 2081 (2024).",
+    "analysis_mode": "Combine the fields below with the Act. Flag any field that suggests a rights violation and cite the section."
+  },
+  "user": {
+    "id": "3647de90-e4e0-40ee-9275-f4277ab247cb",
+    "age": 26,
+    "gender": "male",
+    "ethnicity": "Brahman - Hill",
+    "education_level": "bachelor",
+    "language": "en"
+  },
+  "employers": [
+    {
+      "employer": {
+        "id": "c8af3874-7a2a-4961-8f50-e92bf83b48fa",
+        "employer_name": "sudeep",
+        "work_province": "bagmati",
+        "work_district": "kathmandu",
+        "work_address": null,
+        "skill_level": "highly_skilled",
+        "industry": "it",
+        "employment_type": "regular",
+        "job_title": null,
+        "hiring_channel": "direct",
+        "contractor_name": null,
+        "tenure_years": 5,
+        "tenure_months": 6,
+        "on_probation": false,
+        "probation_since": null,
+        "contract_hours_per_day": 8,
+        "contract_break_start": "14:00:00",
+        "contract_break_end": "14:30:00",
+        "contract_break_unspecified": false,
+        "contract_days_per_week": 6,
+        "contract_break_days": [
+          "6"
+        ],
+        "contract_break_days_unspecified": false,
+        "contract_months_per_year": 11,
+        "contract_break_months": null,
+        "contract_daily_hours": 8,
+        "contract_weekly_hours": 48,
+        "contract_monthly_hours": 190.652,
+        "actual_hours_per_day": 8,
+        "actual_break_start": null,
+        "actual_break_end": null,
+        "actual_break_unspecified": true,
+        "actual_days_per_week": 6,
+        "actual_break_days": [
+          "6"
+        ],
+        "actual_break_days_unspecified": false,
+        "actual_months_per_year": 11,
+        "actual_break_months": null,
+        "actual_daily_hours": 8,
+        "actual_weekly_hours": 48,
+        "actual_monthly_hours": 190.652,
+        "overtime_rule": true,
+        "overtime_hours_per_unit": 1,
+        "overtime_unit": "dont_know",
+        "overtime_rate": "100",
+        "overtime_rate_other": null,
+        "overtime_consent": "voluntary",
+        "night_work": true,
+        "night_allowance": true,
+        "pay_unit": "weekly",
+        "promised_wage": 5400,
+        "monthly_salary_calculated": 23398.2,
+        "payment_frequency": "monthly",
+        "payment_method": "wallet",
+        "received_annual_increment": true,
+        "festival_expense_paid": true,
+        "other_deduction_reason": null,
+        "weekly_leave_days_per_month": 1,
+        "weekly_off_day_guaranteed": false,
+        "worked_off_day_paid_and_replaced": true,
+        "public_holiday_paid_leave": false,
+        "sick_leave_denied": false,
+        "pregnant_or_maternity_last_year": false,
+        "maternity_leave_denied": null,
+        "paternity_leave_denied": false,
+        "mourning_leave_denied": false,
+        "has_written_contract": true,
+        "contract_states_wage": true,
+        "contract_states_hours": true,
+        "contract_states_leave": true,
+        "contract_states_termination": true,
+        "contract_explained_in_own_language": true,
+        "ssf_registered": true,
+        "pf_deducted": false,
+        "pf_deposited": null,
+        "gratuity_deducted": false,
+        "gratuity_paid_by_employer": false,
+        "medical_insurance_provided": true,
+        "accidental_insurance_provided": true,
+        "paid_fee_to_get_job": false,
+        "wage_withheld_before_start": false,
+        "employer_holds_documents": false,
+        "free_to_leave_during_off_hours": true,
+        "abuse_experienced": false,
+        "terminated": false,
+        "notice_given_days": null,
+        "retrenchment_compensation_months": null,
+        "final_settlement_within_15_days": null,
+        "other_clauses": [
+          "i should work 90 hours per week "
+        ]
+      },
+      "weekly_setting": {
+        "id": "78be4872-abca-4bf6-a69c-7c0cd4c5bf54",
+        "employer_id": "c8af3874-7a2a-4961-8f50-e92bf83b48fa",
+        "week_start": "2026-08-03",
+        "break_days_this_week": [
+          "5"
+        ],
+        "promised_payment_day": "2026-08-08",
+        "daily_promised_wage": null,
+        "created_at": "2026-08-07T20:13:42.525324+00:00"
+      },
+      "logs": [
+        {
+          "id": "229531f7-88da-4f89-8e71-10bade2edf08",
+          "user_id": "3647de90-e4e0-40ee-9275-f4277ab247cb",
+          "employer_id": "c8af3874-7a2a-4961-8f50-e92bf83b48fa",
+          "log_date": "2026-08-07",
+          "report_time": "17:30:00",
+          "scheduled_end_time": "09:00:00",
+          "scheduled_break_start": null,
+          "scheduled_break_end": null,
+          "work_started_at": "2026-08-07T12:09:13.339000+00:00",
+          "work_ended_at": "2026-08-07T20:14:33.943000+00:00",
+          "breaks": null,
+          "overtime_minutes": 674,
+          "paid_amount": null,
+          "promised_amount": null,
+          "deductions": null,
+          "note": null,
+          "created_at": "2026-08-07T20:15:34.809561+00:00"
+        }
+      ],
+      "deterministic_findings": [
+        {
+          "rule_id": "hours.rest_break",
+          "section_reference": "§28(2)",
+          "severity": "warning",
+          "plain_explanation_en": "The law requires a 30-minute rest break after 5 continuous hours of work.",
+          "plain_explanation_ne": "कानुनले लगातार ५ घण्टा कामपछि ३० मिनेट आराम अनिवार्य गरेको छ।",
+          "suggested_action_en": "Request your rest break; a denial is a violation you can report.",
+          "suggested_action_ne": "आरामको ब्रेक माग गर्नुहोस्; अस्वीकार गर्नु उल्लङ्घन हो जुन तपाईंले रिपोर्ट गर्न सक्नुहुन्छ।"
+        },
+        {
+          "rule_id": "social.gratuity_not_paid",
+          "section_reference": "§53, §53(6)",
+          "severity": "warning",
+          "plain_explanation_en": "You have worked 1+ year(s) but your employer is not paying gratuity (8.33% of basic pay/month, funded by the employer). The employer owes you the equivalent cash amount.",
+          "plain_explanation_ne": "तपाईंले १ वर्षभन्दा बढी काम गर्नुभयो तर रोजगारदाताले उपदान तिरिरहेको छैन (आधार तलबको ८.३३%/महिना, रोजगारदाताको दायित्व)। रोजगारदाताले बराबरको नगद रकम तिर्नुपर्छ।",
+          "suggested_action_en": "Claim gratuity; complain to the Labour Office if unpaid.",
+          "suggested_action_ne": "उपदान माग गर्नुहोस्; नतिरेमा श्रम कार्यालयमा उजुरी गर्नुहोस्।"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "today": {
+      "days_worked": 1,
+      "overtime_minutes": 674,
+      "overtime_hours_rounded": 11.2,
+      "paid_amount": 0,
+      "promised_amount": 0,
+      "amount_due": 0
+    },
+    "last_7_days": {
+      "days_worked": 1,
+      "overtime_minutes": 674,
+      "overtime_hours_rounded": 11.2,
+      "paid_amount": 0,
+      "promised_amount": 0,
+      "amount_due": 0
+    },
+    "last_30_days": {
+      "days_worked": 1,
+      "overtime_minutes": 674,
+      "overtime_hours_rounded": 11.2,
+      "paid_amount": 0,
+      "promised_amount": 0,
+      "amount_due": 0
+    },
+    "last_90_days": {
+      "days_worked": 1,
+      "overtime_minutes": 674,
+      "overtime_hours_rounded": 11.2,
+      "paid_amount": 0,
+      "promised_amount": 0,
+      "amount_due": 0
+    },
+    "employer_count": 1
+  }
+}

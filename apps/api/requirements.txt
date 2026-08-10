@@ -1,0 +1,28 @@
+fastapi>=0.115.6
+uvicorn[standard]>=0.34.0
+sqlalchemy[asyncio]>=2.0.38
+asyncpg>=0.30.0
+alembic>=1.14.0
+pydantic>=2.12
+pydantic-settings>=2.7.0
+# Digital signatures (ETA 2063 "asymmetric cryptosystem"): RSA-2048/SHA-256.
+cryptography>=43.0.0
+python-multipart>=0.0.20
+pytesseract>=0.3.13
+Pillow>=11.0.0
+pytest>=8.3.4
+pytest-asyncio>=0.25.0
+httpx>=0.28.1
+
+# ── "Analyse with AI" RAG pipeline (The Labour Act, 2017 vectorstore + Gemini) ──
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-google-genai>=2.0.0
+google-generativeai>=0.8.0
+langchain-huggingface>=0.1.0
+langchain-chroma>=0.1.0
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+jsonschema>=4.23.0
+python-dotenv>=1.0.0
