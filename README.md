@@ -167,6 +167,37 @@ relative-import fixes into `apps/api/app/ai/`).
 - No authentication in the MVP.
 - The aggregate dashboard is built from these anonymized submissions.
 
+## Asymmetric cryptosystem
+
+The platform implements **asymmetric (public-key) cryptography** to protect
+sensitive worker data at rest and in transit:
+
+- **Algorithm**: RSA-2048 with OAEP padding (via the `cryptography` Python
+  library).
+- **Key management**:
+  - A server-side **private key** is generated once on first boot and stored in
+    `apps/api/data/keys/private.pem` (not committed to source control).
+  - A matching **public key** is derived from the private key and distributed to
+    the frontend; it is used to encrypt payloads before submission.
+- **Encryption flow**:
+  1. The frontend encrypts personally identifiable fields (phone, national ID
+     — collected only if the worker opts in) with the public key.
+  2. The ciphertext is sent to `POST /api/submissions`.
+  3. The backend decrypts with the private key only at the moment a finding is
+     persisted, then immediately discards the plaintext.
+  4. Encrypted fields are stored as Base64-encoded ciphertext in the database,
+     readable only with the private key.
+- **Benefits**:
+  - A database breach exposes only ciphertext; the private key never leaves the
+    server.
+  - Compromising a single submission requires the attacker to also obtain the
+    private key.
+  - Future support for per-worker key pairs (worker holds their own private key)
+    is straightforward under this architecture.
+
+> The private key is rotated manually today; automated rotation and hardware
+> security module (HSM) integration are stretch goals.
+
 ## Legal notes
 
 - Minimum-wage floor is configurable via `MINIMUM_MONTHLY_WAGE` (defaults to
